@@ -39,11 +39,17 @@ function Home() {
                   <h2 className="text-center">LOGIN</h2>
                 </div>
                 <div className="col-12 mb-3">
-                  <input className="form-control" type="text" placeholder="Enter Username..." onChange={(e) => handleUsername(e)} />
+                  <div className="form-floating">
+                    <input className="form-control" type="text" placeholder="Enter Username..." onChange={(e) => handleUsername(e)} />
+                    <label for="floatingInput">Username</label>
+                  </div>
                 </div>
                 <div className="col-12 mb-3">
                   <div className="input-group">
-                    <input className="form-control" type={!showPassword ? "password" : "text"} placeholder="Enter Password..." />
+                    <div className="form-floating">
+                      <input className="form-control" type={!showPassword ? "password" : "text"} placeholder="Enter Password..." />
+                      <label for="floatingInput">Password</label>
+                    </div>
                     <button type="button" className="input-group-text" onClick={handleShowPassword} style={{ borderRadius: '0px 30px 30px 0px' }}>
                       {showPassword ?
                         <>
@@ -57,7 +63,7 @@ function Home() {
                   </div>
                 </div>
                 <div className="col-12 mb-3">
-                  <a href="/customers" type="button" className="btn btn-primary w-100"><i className="bi bi-box-arrow-in-right me-2"></i> Login</a>
+                  <a href="/customers" type="button" className="btn btn-lg btn-primary w-100"><i className="bi bi-box-arrow-in-right me-2"></i> Login</a>
                 </div>
                 <div className="col-12 mb-3 text-center">
                   <a href="#">No have account? Register</a>

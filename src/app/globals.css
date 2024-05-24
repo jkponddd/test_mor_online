@@ -1,5 +1,4 @@
 :root {
-
   .btn-primary {
     --bs-btn-color: #fff;
     --bs-btn-bg: #34EEC3;
@@ -31,10 +30,59 @@
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   }
 
+  .form-select:focus {
+    border-color: #34EEC3;
+    outline: 0;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
   .card {
     border-radius: 30px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
     border-color: transparent;
+  }
+
+  .form-floating>.form-control:focus~label::after,
+  .form-floating>.form-control:not(:placeholder-shown)~label::after {
+    background-color: transparent;
+  }
+
+  .nav-pills {
+    --bs-nav-pills-border-radius: 40px;
+    --bs-nav-pills-link-active-color: #fff;
+    --bs-nav-pills-link-active-bg: #34EEC3;
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color) !important;
+    background-color: var(--bs-nav-pills-link-active-bg) !important;
+  }
+
+  .dropdown-menu {
+    border-radius: 20px;
+    border: 1px solid var(--bs-nav-pills-link-active-bg);
+  }
+
+  .navbar-toggler {
+    color: #34eec380;
+    border: 1px solid #34EEC3;
+  }
+
+  .dropdown-item:focus,
+  .dropdown-item:hover {
+    color: #fff;
+    background-color: var(--bs-nav-pills-link-active-bg);
+    border-radius: 20px;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  .text-bg-primary {
+    color: #fff !important;
+    background-color: #34EEC3 !important;
   }
 }
 
