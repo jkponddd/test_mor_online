@@ -5,17 +5,30 @@ import Image from "next/image";
 import banner from "./../assets/images/undraw_medicine.png";
 
 function Home() {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
+  const [usernameTextError, setUsernameTextError] = useState("");
+  const [passwordTextError, setPasswordTextError] = useState("");
+
   const [showAlertError, setShowAlertError] = useState(false);
-  const [showAlertText, setShowAlertText] = useState("");
+  const [showTextAlertError, setShowTextAlertError] = useState("");
 
   const handleUsername = (e) => {
     let value = e.target.value;
     localStorage.setItem("customerName", value);
+    setUsername(value);
+
+    if (value == "") {
+      setUsernameError(true);
+      setUsernameTextError("Username is invalid.");
+    } else {
+      setUsernameError(false);
+    }
   };
 
   const handlePassword = (e) => {
@@ -24,16 +37,39 @@ function Home() {
 
     if (value == "") {
       setPasswordError(true);
+      setPasswordTextError("Password is invalid, Must be at least 6 characters.");
     } else {
       setPasswordError(false);
     }
   };
 
   const handleLogin = () => {
-    if (password.length < 6) {
+    let checkShowError = false;
+
+    if (username != "admin") {
+      checkShowError = true;
+      setUsernameError(true);
+      setUsernameTextError("Username wrong, Please check.");
+    } else if (password.length < 6) {
+      checkShowError = true;
+      setUsernameError(false);
+      setUsernameTextError("");
+
       setPasswordError(true);
+      setPasswordTextError("Password must be at least 6 characters.");
+    } else if (username == "admin" && password != "123456") {
+      checkShowError = true;
+      setUsernameError(false);
+      setUsernameTextError("");
+
+      setPasswordError(true);
+      setPasswordTextError("Password wrong, Please check.");
+    }
+
+    if (checkShowError) {
+      checkShowError = false;
       setShowAlertError(true);
-      setShowAlertText("Password must be at least 6 characters.")
+      setShowTextAlertError("Username or password wrong, Please check.");
 
       setTimeout(() => {
         setShowAlertError(false);
@@ -50,7 +86,7 @@ function Home() {
   return (
     <>
       <div className={`alert alert-danger position-absolute ${showAlertError ? 'd-block' : 'd-none'}`} role="alert" style={{ right: "20px", top: "20px" }}>
-        Error! {showAlertText}
+        Error! {showTextAlertError}
       </div>
 
       <div className="container-fluid">
@@ -72,9 +108,12 @@ function Home() {
                 </div>
                 <div className="col-12 mb-3">
                   <div className="form-floating">
-                    <input className="form-control" type="text" placeholder="Enter Username..." onChange={(e) => handleUsername(e)} />
+                    <input className={`form-control ${usernameError ? 'is-invalid' : ''}`} type="text" placeholder="Enter Username..." onChange={(e) => handleUsername(e)} />
                     <label for="floatingInput">Username</label>
                   </div>
+                  <small className={`invalid-feedback ${usernameError ? 'd-block' : 'd-none'}`}>
+                    {usernameTextError}
+                  </small>
                 </div>
                 <div className="col-12 mb-3">
                   <div className="input-group">
@@ -94,14 +133,11 @@ function Home() {
                     </button>
                   </div>
                   <small className={`invalid-feedback ${passwordError ? 'd-block' : 'd-none'}`}>
-                    Password must be at least 6 characters.
+                    {passwordTextError}
                   </small>
                 </div>
                 <div className="col-12 mb-3">
                   <button type="button" className="btn btn-lg btn-primary w-100" onClick={handleLogin}><i className="bi bi-box-arrow-in-right me-2"></i> Login</button>
-                </div>
-                <div className="col-12 mb-3 text-center">
-                  <a href="#">No have account? Register</a>
                 </div>
               </div>
             </div>

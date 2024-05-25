@@ -42,10 +42,10 @@ export default function Sidebar() {
                         </li>
                     </div>
                     <li className="nav-item">
-                        <a className="nav-link p-3 disabled text-secondary" aria-disabled="true"><i className="bi bi-star-fill"></i> Promotion <span className="badge rounded-pill text-bg-danger">soon</span></a>
+                        <a className="nav-link p-3 disabled text-secondary" aria-disabled="true"><i className="bi bi-star-fill"></i> Promotion <span className="badge rounded-pill text-bg-secondary">soon</span></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link p-3 disabled text-secondary" aria-disabled="true"><i className="bi bi-currency-exchange"></i> Earn & Burn <span className="badge rounded-pill text-bg-danger">soon</span></a>
+                        <a className="nav-link p-3 disabled text-secondary" aria-disabled="true"><i className="bi bi-currency-exchange"></i> Earn & Burn <span className="badge rounded-pill text-bg-secondary">soon</span></a>
                     </li>
                 </ul>
             </div>

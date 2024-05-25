@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function Navbar() {
     const pathname = usePathname();
-    const [customerName, setCustomerName] = useState("Admin");
+    const [customerName, setCustomerName] = useState("");
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -54,10 +54,10 @@ export default function Navbar() {
                                     </ul>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link px-3 disabled" aria-disabled="true">Promotion <span className="badge rounded-pill text-bg-danger">soon</span></a>
+                                    <a className="nav-link px-3 disabled" aria-disabled="true">Promotion <span className="badge rounded-pill text-bg-secondary">soon</span></a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link px-3 disabled" aria-disabled="true">Earn & Burn <span className="badge rounded-pill text-bg-danger">soon</span></a>
+                                    <a className="nav-link px-3 disabled" aria-disabled="true">Earn & Burn <span className="badge rounded-pill text-bg-secondary">soon</span></a>
                                 </li>
                             </ul>
                             <div className='d-flex gap-3 mx-3 mx-lg-0'>
