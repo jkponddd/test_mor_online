@@ -2,6 +2,7 @@
 
 import Navbar from "./../../components/Navbar.js";
 import Sidebar from "./../../components/Sidebar.js";
+import Footer from "./../../components/Footer.js";
 import Pagination from "./../../components/Pagination.js";
 
 import { useEffect, useState } from 'react';
@@ -102,7 +103,7 @@ function CustomerDetail({ params }) {
     return (
         <>
             <Navbar />
-            <div className="container-fluid pt-5">
+            <div className="container-fluid pt-5 mb-5">
                 <div className="row pt-2">
                     <Sidebar />
                     <div className="col-12 offset-lg-3 col-lg-9 p-3">
@@ -254,6 +255,7 @@ function CustomerDetail({ params }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };
