@@ -27,36 +27,36 @@ export default function Navbar() {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav nav nav-pills me-auto mb-2 mb-lg-0 d-none d-lg-block"></ul>
                             <ul className="navbar-nav nav nav-pills me-auto mb-2 mb-lg-0 d-block d-lg-none">
-                                <li className="nav-item">
-                                    <a className="nav-link px-3" aria-current="page" href="">Dashboard</a>
+                                <li className="nav-item my-2">
+                                    <a className="nav-link px-3" aria-current="page" href=""><i className="bi bi-bar-chart-line-fill me-2"></i> Dashboard</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className={`nav-link px-3 ${pathname.includes("/customers") ? "active" : ""} `} aria-current="page" href="/customers">Customers</a>
+                                <li className="nav-item mb-2">
+                                    <a className={`nav-link px-3 ${pathname.includes("/customers") ? "active" : ""} `} aria-current="page" href="/customers"><i className="bi bi-people-fill me-2"></i> Customers</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link px-3" aria-current="page" href="#">Rooms</a>
+                                <li className="nav-item mb-2">
+                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-hospital-fill me-2"></i> Rooms</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link px-3" aria-current="page" href="#">News & Activities</a>
+                                <li className="nav-item mb-2">
+                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-megaphone-fill me-2"></i>News & Activities</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link px-3" aria-disabled="true">Notification <span className="badge rounded-pill text-bg-danger">99+</span></a>
+                                <li className="nav-item mb-2">
+                                    <a className="nav-link px-3" aria-disabled="true"><i className="bi bi-bell-fill me-2"></i> Notification <span className="badge rounded-pill text-bg-danger">99+</span></a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link px-3" aria-current="page" href="#">Report</a>
+                                <li className="nav-item mb-2">
+                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-file-earmark-excel-fill"></i> Report</a>
                                 </li>
-                                <li className="nav-item dropdown px-3">
-                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Settings</a>
+                                <li className="nav-item dropdown px-3 pb-3 mb-2">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i className="bi bi-gear-fill me-2"></i> Settings</a>
                                     <ul className="dropdown-menu p-3">
-                                        <li><a className="dropdown-item" href="#">Profile</a></li>
-                                        <li><a className="dropdown-item" href="#">Stock</a></li>
-                                        <li><a className="dropdown-item" href="#">Role</a></li>
+                                        <li><a className="dropdown-item" href="#"><i className="bi bi-person-fill-gear me-2"></i> Profile</a></li>
+                                        <li><a className="dropdown-item" href="#"><i className="bi bi-box-seam-fill me-2"></i> Stock</a></li>
+                                        <li><a className="dropdown-item" href="#"><i className="bi bi-person-lock me-2"></i> Role</a></li>
                                     </ul>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item mb-2" style={{ pointerEvents: 'none' }}>
                                     <a className="nav-link px-3 disabled" aria-disabled="true">Promotion <span className="badge rounded-pill text-bg-secondary">soon</span></a>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item mb-2" style={{ pointerEvents: 'none' }}>
                                     <a className="nav-link px-3 disabled" aria-disabled="true">Earn & Burn <span className="badge rounded-pill text-bg-secondary">soon</span></a>
                                 </li>
                             </ul>
