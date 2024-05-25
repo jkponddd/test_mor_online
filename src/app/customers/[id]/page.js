@@ -123,7 +123,7 @@ function CustomerDetail({ params }) {
                                         <div className="card mb-5">
                                             <div className="row g-0">
                                                 <div className="col-md-4">
-                                                    <img src={item.image} className="img-fluid w-100 h-auto" style={{ borderRadius: '30px 0px 0px 30px' }} />
+                                                    <img src={item.image} className="img-fluid w-100 h-auto card-border-radius-custom" />
                                                 </div>
                                                 <div className="col-md-8">
                                                     <div className="card-body d-flex flex-column justify-content-center h-100">
