@@ -30,7 +30,7 @@ export default function Sidebar() {
                     <li className="nav-item mb-2 dropdown p-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <a className="nav-link dropdown-toggle p-0"><i className="bi bi-gear-fill me-2"></i> Settings</a>
                     </li>
-                    <div className="collapse px-3" id="collapseExample">
+                    <div className="collapse ps-3" id="collapseExample">
                         <li className="nav-item mb-2">
                             <a className="nav-link p-3" aria-disabled="true"><i className="bi bi-person-fill-gear me-2"></i> Profile</a>
                         </li>
