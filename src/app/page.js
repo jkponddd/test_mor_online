@@ -45,11 +45,11 @@ function Home() {
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
-  }
+  };
 
   return (
     <>
-      <div class={`alert alert-danger position-absolute ${showAlertError ? 'd-block' : 'd-none'}`} role="alert" style={{ right: "20px", top: "20px" }}>
+      <div className={`alert alert-danger position-absolute ${showAlertError ? 'd-block' : 'd-none'}`} role="alert" style={{ right: "20px", top: "20px" }}>
         Error! {showAlertText}
       </div>
 
@@ -93,7 +93,7 @@ function Home() {
                       }
                     </button>
                   </div>
-                  <small class={`invalid-feedback ${passwordError ? 'd-block' : 'd-none'}`}>
+                  <small className={`invalid-feedback ${passwordError ? 'd-block' : 'd-none'}`}>
                     Password must be at least 6 characters.
                   </small>
                 </div>

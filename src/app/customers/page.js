@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import Navbar from "./../components/Navbar.js";
 import Sidebar from "./../components/Sidebar.js";
+import Pagination from "./../components/Pagination.js";
+
 import customerLists from './../../customers.json';
 import Image from "next/image";
 import noData from "./../../assets/images/undraw_no_data.png";
@@ -33,7 +35,7 @@ function Customers() {
 
     const handleClearData = () => {
         window.location.reload();
-    }
+    };
 
     const handleItemsPerPageChange = (e) => {
         let value = e.target.value;
@@ -81,22 +83,6 @@ function Customers() {
         }
     }, [searchName, genderFilter, itemsPerPage]);
 
-    const Pagination = ({ totalPages, paginate }) => {
-        const pageNumbers = [];
-
-        for (let i = 1; i <= totalPages; i++) {
-            pageNumbers.push(i);
-        }
-
-        return (
-            <div className='d-flex gap-2'>
-                {pageNumbers.map((number) => (
-                    <span key={number} type="button" className={`badge ${number == currentPage ? "text-bg-primary" : "text-bg-secondary"} w-100`} onClick={() => paginate(number)}>{number}</span>
-                ))}
-            </div>
-        );
-    };
-
     return (
         <>
             <Navbar />
@@ -105,7 +91,6 @@ function Customers() {
                     <Sidebar />
                     <div className="col-12 offset-lg-3 col-lg-9 p-3">
                         <div>
-
                             <h4 className='mb-3'>Customers</h4>
                             <div className='row'>
                                 <div className="col-12 col-md-3 mb-3">
@@ -130,13 +115,13 @@ function Customers() {
                                             <th>Image</th>
                                             <th>Username</th>
                                             <th>Name</th>
-                                            <th className='d-flex gap-2'><span>Age</span> <i className="bi bi-arrow-down-up" type="button" onClick={handleSortOrderChange}></i></th>
+                                            <th><span>Age</span> <i className="bi bi-arrow-down-up ms-2" type="button" onClick={handleSortOrderChange}></i></th>
                                             <th>Gender</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {filteredData.length > 0 ?
+                                        {filteredData?.length > 0 ?
                                             <>
                                                 {filteredData.map((item, index) => (
                                                     <tr key={item.id}>
@@ -179,7 +164,7 @@ function Customers() {
                                     <option value="10">10</option>
                                     <option value="20">20</option>
                                 </select>
-                                <Pagination totalPages={totalPages} paginate={paginate} />
+                                <Pagination totalPages={totalPages} paginate={paginate} currentPage={currentPage} />
                             </div>
                         </div>
                     </div>

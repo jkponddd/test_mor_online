@@ -52,7 +52,7 @@ export default function Navbar() {
                             </ul>
                             <div className='d-flex gap-3 mx-3 mx-lg-0'>
                                 <a href="#" type="button" className='btn btn-outline-secondary px-3'>
-                                    <i class="bi bi-person-circle me-2"></i>
+                                    <i className="bi bi-person-circle me-2"></i>
                                     {localStorage.getItem("customerName")}
                                 </a>
                                 <a href="/" type="button" className="btn btn-outline-danger px-3"><i className="bi bi-box-arrow-in-left me-2"></i> Logout</a>
@@ -63,4 +63,4 @@ export default function Navbar() {
             </nav>
         </>
     );
-}
+};
