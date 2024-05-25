@@ -1,9 +1,19 @@
 "use client"
 
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
     const pathname = usePathname();
+    const [customerName, setCustomerName] = useState("Admin");
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            if (localStorage.getItem("customerName")) {
+                setCustomerName(localStorage.getItem("customerName"));
+            }
+        };
+    }, []);
 
     return (
         <>
@@ -52,8 +62,7 @@ export default function Navbar() {
                             </ul>
                             <div className='d-flex gap-3 mx-3 mx-lg-0'>
                                 <a href="#" type="button" className='btn btn-outline-secondary px-3'>
-                                    <i className="bi bi-person-circle me-2"></i>
-                                    {localStorage.getItem("customerName")}
+                                    <i className="bi bi-person-circle me-2"></i><label>{customerName}</label>
                                 </a>
                                 <a href="/" type="button" className="btn btn-outline-danger px-3"><i className="bi bi-box-arrow-in-left me-2"></i> Logout</a>
                             </div>
