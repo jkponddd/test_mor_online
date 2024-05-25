@@ -5,14 +5,42 @@ import Image from "next/image";
 import banner from "./../assets/images/undraw_medicine.png";
 
 function Home() {
-  const [customername, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const [passwordError, setPasswordError] = useState(false);
+
+  const [showAlertError, setShowAlertError] = useState(false);
+  const [showAlertText, setShowAlertText] = useState("");
+
   const handleUsername = (e) => {
     let value = e.target.value;
-    setUsername(value);
-    localStorage.setItem("customername", value);
+    localStorage.setItem("customerName", value);
+  };
+
+  const handlePassword = (e) => {
+    let value = e.target.value;
+    setPassword(value);
+
+    if (value == "") {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+  };
+
+  const handleLogin = () => {
+    if (password.length < 6) {
+      setPasswordError(true);
+      setShowAlertError(true);
+      setShowAlertText("Password must be at least 6 characters.")
+
+      setTimeout(() => {
+        setShowAlertError(false);
+      }, 3000);
+    } else {
+      window.location.href = "/customers";
+    }
   };
 
   const handleShowPassword = () => {
@@ -21,6 +49,10 @@ function Home() {
 
   return (
     <>
+      <div class={`alert alert-danger position-absolute ${showAlertError ? 'd-block' : 'd-none'}`} role="alert" style={{ right: "20px", top: "20px" }}>
+        Error! {showAlertText}
+      </div>
+
       <div className="container-fluid">
         <div className="row d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
           <div className="col-12 col-lg-6 text-center d-none d-lg-block">
@@ -47,7 +79,7 @@ function Home() {
                 <div className="col-12 mb-3">
                   <div className="input-group">
                     <div className="form-floating">
-                      <input className="form-control" type={!showPassword ? "password" : "text"} placeholder="Enter Password..." />
+                      <input className={`form-control ${passwordError ? 'is-invalid' : ''}`} type={!showPassword ? "password" : "text"} placeholder="Enter Password..." onChange={(e) => handlePassword(e)} />
                       <label for="floatingInput">Password</label>
                     </div>
                     <button type="button" className="input-group-text" onClick={handleShowPassword} style={{ borderRadius: '0px 30px 30px 0px' }}>
@@ -61,9 +93,12 @@ function Home() {
                       }
                     </button>
                   </div>
+                  <small class={`invalid-feedback ${passwordError ? 'd-block' : 'd-none'}`}>
+                    Password must be at least 6 characters.
+                  </small>
                 </div>
                 <div className="col-12 mb-3">
-                  <a href="/customers" type="button" className="btn btn-lg btn-primary w-100"><i className="bi bi-box-arrow-in-right me-2"></i> Login</a>
+                  <button type="button" className="btn btn-lg btn-primary w-100" onClick={handleLogin}><i className="bi bi-box-arrow-in-right me-2"></i> Login</button>
                 </div>
                 <div className="col-12 mb-3 text-center">
                   <a href="#">No have account? Register</a>
