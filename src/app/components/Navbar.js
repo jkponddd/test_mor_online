@@ -37,13 +37,13 @@ export default function Navbar() {
                                     <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-hospital-fill me-2"></i> Rooms</a>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-megaphone-fill me-2"></i>News & Activities</a>
+                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-megaphone-fill me-2"></i> News & Activities</a>
                                 </li>
                                 <li className="nav-item mb-2">
                                     <a className="nav-link px-3" aria-disabled="true"><i className="bi bi-bell-fill me-2"></i> Notification <span className="badge rounded-pill text-bg-danger">99+</span></a>
                                 </li>
                                 <li className="nav-item mb-2">
-                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-file-earmark-excel-fill"></i> Report</a>
+                                    <a className="nav-link px-3" aria-current="page" href="#"><i className="bi bi-file-earmark-excel-fill me-2"></i> Report</a>
                                 </li>
                                 <li className="nav-item dropdown px-3 pb-3 mb-2">
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i className="bi bi-gear-fill me-2"></i> Settings</a>

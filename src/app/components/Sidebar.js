@@ -25,7 +25,7 @@ export default function Sidebar() {
                         <a className="nav-link p-3" aria-disabled="true"><i className="bi bi-bell-fill me-2"></i> Notification <span className="badge rounded-pill text-bg-danger">99+</span></a>
                     </li>
                     <li className="nav-item mb-2">
-                        <a className="nav-link p-3" aria-current="page" href="#"><i className="bi bi-file-earmark-excel-fill"></i> Report</a>
+                        <a className="nav-link p-3" aria-current="page" href="#"><i className="bi bi-file-earmark-excel-fill me-2"></i> Report</a>
                     </li>
                     <li className="nav-item mb-2 dropdown p-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                         <a className="nav-link dropdown-toggle p-0"><i className="bi bi-gear-fill me-2"></i> Settings</a>
